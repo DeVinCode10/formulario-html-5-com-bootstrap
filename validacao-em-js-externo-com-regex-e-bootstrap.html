@@ -1,0 +1,669 @@
+
+
+<!-- Declaração do tipo de documento html. Neste caso é HTML5 -->
+<!doctype html>
+
+<!-- importante! Definir a linguagem da página WEB -->
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="utf-8" />
+	<!-- tem que ter em php aqui se não não estava funcionando -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+	
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache" />
+<META HTTP-EQUIV="Expires" CONTENT="-1" />
+
+    <meta name="description" 
+ content="Nesta página veremos como implementar um formulário HTML5 com bootstrap e diversas  " />
+    <meta name="author" content="" />
+
+    <title>Trabalhando com formulários HTML - dicas especiais</title>
+
+    <!-- Bootstrap Core CSS -->
+   <!-- Última versão CSS compilada e minificada -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<!-- Com a tag link geralmente apontamos para arquivos css do seu site
+ ou de outros sites como o CDN do bootstrap acima -->
+<!-- o css externo -->
+<link  href="cssexterno.css" rel="stylesheet" >
+<link href="jquery.scrollbar-master/jquery.scrollbar.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons'
+     rel='stylesheet' type='text/css'>	
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+	
+	<style>	
+	
+/*.container */
+
+.header{
+
+}
+        
+#page-content-wrapper{
+position:relative;
+top:25px;
+
+}
+
+body {
+    word-wrap: break-word;
+}
+.secao-cronograma{
+font-weight:bolder;
+
+}
+
+form{font-weight:bolder;}
+    
+.panel-title{
+        
+   font-size: 2.0rem;
+}
+
+.textarea-scrollbar {
+    height: auto;
+	/*
+    width: 500px;
+	*/
+}
+        
+</style>
+
+	
+</head>
+
+<body  >
+
+<div class="container-fluid header">
+ <!-- -->
+				
+		
+
+<!-- Page Content -->
+        <div id="page-content-wrapper">
+
+<!--  -->
+
+<div class="container-fluid">
+
+<!-- abaixo é como eu acrescento uma linha em branco
+Não costumo usar <br /> quando uso bootstrap.
+ -->
+<div class="row">
+	<div class="col-md-12">
+	&nbsp;
+	</div> <!-- fim col -->
+</div>
+
+<div class="row">&nbsp;</div>
+
+
+	<div class="panel panel-info">
+  <div class="panel-heading">
+    <h1 class="panel-title" style="font-size: 2.5rem;">CADASTRAR PROJETO INOVADOR</h1>
+  </div>
+  <div class="panel-body " style="background-color:#d9edf7;">
+
+  
+    <div class="row">
+	
+    <div class="col-md-8">
+	<!-- data-validate -->
+	<form name="formenvio" id="formenvio" action="" class="form-horizontal"   method="post">
+
+	
+<div class="row">	<!-- class="col-xs-4 regula o tamanho da div e col-xs-offset-4-->
+	<div class="col-xs-8 col-xs-offset-2">
+		<div class="alert alert-warning output hidden">&nbsp;</div>
+	</div>
+</div>
+
+
+	<div class="form-group has-success">
+    <label for="NO_Titulo"  class="col-sm-2 control-label">Nome do projeto: </label>
+    <div class="col-sm-9">
+      <input type="text" value="" class="form-control" 
+      placeholder="Nome do projeto com até 100 caracteres."
+	  data-required data-msg='O campo "Nome do projeto" é obrigatório.'
+	   id="NO_Titulo" name="NO_Titulo" >
+	  <span class="help-block"><p>Você já digitou 
+	  	<span style="font-weight:bold" id="counter1"></span> caracter(es). Máximo: 100.</p></span>
+    </div>
+  </div>
+
+
+  <div class="form-group has-success">
+    <label for="TX_Resumo_Ideia" class="col-sm-2  control-label">Resumo do projeto:</label>
+    <div class="col-sm-9">
+      <textarea data-required data-msg='O campo "Resumo" é de preenchimento obrigatório.' 
+	  class="form-control textarea-scrollbar scrollbar-outer" rows="5"
+name="TX_Resumo_Ideia"  id="TX_Resumo_Ideia" 
+placeholder="Resuma o projeto aqui com até 400 caracteres."></textarea>
+<span class="help-block"><p>Você ainda pode digitar 
+	<span style="font-weight:bold" id="counter2"></span> caracter(es).</p></span>
+    </div>
+  </div>
+  
+  
+    <div class="form-group has-success">
+    <label for="DS_Ideia" class="col-sm-2  control-label">Detalhe o seu projeto:</label>
+    <div class="col-sm-9">
+      	<textarea data-required data-msg='O campo "detalhes" é de preenchimento obrigatório.' 
+	  	class="form-control textarea-scrollbar scrollbar-outer" rows="5"
+		name="DS_Ideia"  id="DS_Ideia" 
+		placeholder="Descreva o projeto aqui com até 220 palavras."></textarea>
+
+		<span class="help-block"><p>Você ainda pode digitar 
+		<span style="font-weight:bold" id="counter3"></span> palavra(s).</p></span>
+    </div>
+  </div>
+
+
+ <div class="form-group has-success">
+	<label class="col-sm-2 control-label" 
+	for="status">Área de vinculação do projeto:</label>
+
+		<div class="col-sm-9">
+
+            <select    class="form-control" id="id_temaselect" name="id_temaselect"
+            data-required data-msg='O campo área do projeto é obrigatório.'  >
+                <option  value="Prospecção" >Indústria</option>
+                <option value="Experimentação" >Comércio</option>
+                <option  value="Teste" >Agricultura</option>
+
+            </select>
+		<span id="helpBlock" 
+		class="help-block">Por favor, selecione uma área de vinculação !!!</span> 
+
+    </div>
+
+</div>
+
+
+<div class="panel panel-success">
+  <div class="panel-heading">
+    <h2 class="panel-title" style="font-size: 2.0rem;">Em qual área seu projeto está vinculado?</h2>
+  </div>
+  <div class="panel-body " style="background-color:#dff0d8">
+
+  <div class="container">
+	<div class="form-group">	
+		<div class="">
+		  <div class="radio ">
+			<label class="  " >
+			  <input type="radio" name="id_tema" id="id_tema1" data-required  
+			  data-msg="O campo área do projeto é obrigatório."  
+			  value="1"  >
+			  <span style="font-weight:bolder;">Indústria</span>
+			</label>
+		  </div>
+		</div>
+	  </div>
+	<div class="form-group">	
+	  <div class="">
+		  <div class="radio radio">
+			<label class="  " >
+			  <input type="radio" name="id_tema" id="id_tema2" data-required  
+			  data-msg=""
+			  value="2" ><span style="font-weight:bolder;">Comércio</span>
+			</label>
+		  </div>
+		</div>
+	  </div>
+
+	<div class="form-group">	
+	  <div class="">
+		  <div class="radio ">
+			<label class="  " >
+			  <input type="radio" name="id_tema" id="id_tema3" data-required  
+			  data-msg=""
+			  value="3" ><span style="font-weight:bolder;">Agricultura</span>
+			</label>
+		  </div>
+		</div>
+	  </div>
+
+ </div> 
+	
+  </div> <!-- fim panelbody -->
+</div> <!-- fim panel do radio area de vinculação-->	
+	
+
+	
+<div class="panel panel-success">
+  <div class="panel-heading">
+    <h2 class="panel-title" style="font-size: 2.0rem;">O projeto é em dupla?</h2>
+  </div>
+  <div class="panel-body " style="background-color:#dff0d8">
+<div class="container">
+<div class="form-group">	
+	<div class="">
+      <div class="radio ">
+        <label class="  " >
+          <input type="radio" name="simnao" id="sim" data-required  
+		  data-msg="O campo você tem parceiro para o processo é requerido."  
+		  value="1" ><span style="font-weight:bolder;">Sim</span>
+        </label>
+      </div>
+    </div>
+  </div>
+<div class="form-group">	
+  <div class="">
+      <div class="radio ">
+        <label class="  " >
+          <input type="radio" name="simnao" id="nao" data-required  
+		  data-msg=""  value="0" ><span style="font-weight:bolder;">Não</span>
+        </label>
+      </div>
+    </div>
+  </div>
+  
+  
+
+
+ </div> 
+	
+  </div> <!-- fim panelbody -->
+</div> <!-- fim panel -->
+
+  
+  	 <div class="inclusaovalores">
+	 <!-- O código abaixo é para usar com php ou outra linguagem
+	 Caso no banco de dados já tenha sido cadastrado anteriormente
+	 pelo botão salvar como tem paceiro $simnao terá valor 1 e a
+	 div com a matricula do usuário será exibida
+	 permitindo a alteração do valor
+
+	 <?php if ($simnao==1){ ?>
+	  <div class="form-group has-success "><label for="matricula_colega" 
+	   class="col-sm-2 control-label ">Matrícula do parceiro: </label>
+		<div class="col-sm-9"><input  type="text" value="" maxlenght="7" 
+		data-rule="usrempresa" class="form-control " placeholder="matrícula do colega com até 6 caracteres."
+		data-required  data-msg="O campo matrícula do colega é obrigatório e deve ser preenchido no formato X12345."
+		 id="matricula_colega" name="matricula_colega" ></div></div>
+	 <?php }  ?>
+	 -->
+	 </div>
+
+
+ <div class="row">
+    <div class="col-sm-6">
+        <div class="form-group  has-success">
+            <label for="data_inicio" class="col-sm-4 control-label">Data Inicial do projeto: </label>
+            <!--<input type="text" class="form-control" disabled>-->
+			<div class="col-sm-6">
+	            <input type="text" data-rule="date" name="data_inicio"  id="data_inicio"
+	            data-required data-datepicker 
+	            data-msg="O campo 'Data Inicial' é obrigatório e deve ser preenchido no formato dd/mm/aaaa!"
+	            class="form-control">
+			</div>
+    	</div>
+    </div>
+						
+
+    <!--<div class="col-sm-5 "> com o a fica assim -->
+	<div class="col-sm-6 ">
+        <div class="form-group  has-success">
+
+          	<label for="data_fim" class="col-sm-4 control-label">Data Final do projeto:</label>
+			<div class="col-sm-6">
+	            <input name="data_fim" data-rule="date"  id="data_fim"  data-required data-datepicker 
+				data-msg="O campo 'Data Final' é obrigatório e deve ser preenchido no formato dd/mm/aaaa!" type="text" 
+	            class=" form-control">
+			</div>
+        </div>
+    </div>
+						
+						
+
+</div><!-- fim row datas -->
+
+
+
+
+  <hr />
+    <div class="container">
+  <div class="form-group ">
+		<div class="has-success ">
+      <div class="checkbox ">
+        <label>
+          <input name="termo_responsabilidade"  data-required 
+          data-msg='O campo do "Termo de Responsabilidade" é de preenchimento obrigatório.'
+		  value="1" type="checkbox"> <span><strong>Certifico que li os Termos e Condições e<br />
+		   Responsabilizo-me pelas informações prestadas.<span></strong>
+        </label>
+      </div>
+	  </div>
+    </div>
+	</div>
+
+<div class="row">
+	<div class="col-sm-2">
+		  <div  class="form-group">
+			<div class="col-sm-2 ">
+			  <button id="salvaformprincipal" data-salvacadastra="0" 
+			  data-tooltip title="Salva os dados para envio futuro."  
+			  type="button"  class="btn btn-info btn-lg">Salvar</button> 
+			</div> 
+		  </div>
+	 </div>
+	  
+	  <div class="col-sm-2">
+		  <div  class="form-group">
+			<div class="col-sm-2 ">
+			  <button id="cadastraformprincipal" data-salvacadastra="1" 
+			  data-tooltip title="Use este botão para cadastrar sua ideia."  
+			  type="button"  class="btn btn-info btn-lg">Cadastrar</button> 
+			</div> 
+		  </div>
+	  </div>
+	  
+	  <input type='hidden' name = "verificabotao" id="verificabotao" value="" /> 
+	  
+  
+</div>
+  
+
+</form>
+	
+	
+	</div>
+	
+	<div  style="border:1px solid;background-color:white;border-radius:10px"
+	 class="col-md-4 secao-cronograma">
+		<div style="text-align:center;vertical-align:middle;" class="row">
+		<div class="row">&nbsp;</div>
+		<span style="color:#0066ff;">Cronograma</span>
+		<div class="row">&nbsp;</div>
+		<div  style="border:1px solid #0066cc;"></div>
+		</div>
+	<div class="row">&nbsp;</div>
+		<div class="col-md-12 ">
+				
+				<div  class="row">Inscrições: 22/abr - 28/abr</div>
+				<div  class="row">Avaliação inicial: 05 a 17/mai</div>
+				<div  class="row">Divulgação dos projetos semifinalistas (25 melhores): 25/mai</div>
+				<div  class="row">Criação de vídeos Pitch dos projetos semifinalistas: 28/mai a 06/jun</div>
+				<div  class="row">Avaliação intermediária: 12/jun</div>
+				<div  class="row">Criação de vídeos na unidades: 20 a 25/jun</div>
+				<div  class="row">Votação online nas unidades: 01/jul a 10/jun</div>
+				<div  class="row">Evento especial para a divulgação dos vencedores: 30/mai: </div>
+		
+		</div>		
+	
+	</div>
+	
+	</div>
+	
+  </div> <!-- fim panelbody principal-->
+</div> <!-- fim panel principal -->
+
+
+</div> <!-- container -->
+		
+<!-- Abaixo mostra mensagem, caso o navegador
+seja o internet explorer, para o usuário escolher
+outro navegador. Caso seja necessário em seus projetos.
+ -->		
+		
+<script type="text/javascript">
+
+ //var ie = /*@cc_on!@*/false || !!document.documentMode;  //outra forma
+ var ie = /msie|trident/g.test(navigator.userAgent.toLowerCase());
+ 
+ //abaixo serve para o edge tb
+//alert(/msie|trident|edge/g.test(navigator.userAgent.toLowerCase()));
+ 
+ //var verseie = /msie|trident/g.test(navigator.userAgent.toLowerCase());
+if (ie){
+document.write('<div class=" "><strong><span style="color:red" id="helpBlock" class="help-block">O Internet Explorer não suporta algumas tecnologias inovadoras. Sugerimos utilizar outro navegador.</span></strong></div>');
+          
+}
+</script>
+
+
+<script type="text/javascript">
+
+
+$(document).ready(function(){
+
+
+});
+
+
+
+</script>
+
+<!-- js -->
+
+	
+
+</div> <!-- fim  Page Content  id="page-content-wrapper 	-->
+	
+	
+	<!-- jQuery -->
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>	
+
+
+            
+</div> <!--<div class="container-fluid"> -->
+ 
+<!--https://github.com/aaronrussell/jquery-simply-countable -->           
+<script src="jquery-simply-countable-master/jquery.simplyCountable.js"></script>
+
+<!--https://github.com/gromo/jquery.scrollbar -->
+<script src="jquery.scrollbar-master/jquery.scrollbar.min.js"></script>
+
+<script src="jsexterno.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+//notify('ii');
+//alert("cx");
+
+jQuery('.textarea-scrollbar').scrollbar();
+
+$("#sim").click(function(){
+
+$(".inclusaovalores").html("");
+
+$(".inclusaovalores").html($(".inclusaovalores").html() + '<div class="form-group has-success "><label for="matricula_colega"  class="col-sm-2 control-label ">Matrícula do colega: </label>'+
+'<div class="col-sm-9"><input  type="text" value="" maxlenght="7" data-rule="usrempresa" class="form-control " placeholder="matrícula do colega com até 6 caracteres no formato X12345."'+
+'data-required data-msg="O campo matrícula do colega é obrigatório e deve ser preenchido no formato X12345." id="matricula_colega" name="matricula_colega" ></div></div>');
+
+});
+
+
+$("#nao").click(function(){
+
+
+$(".inclusaovalores").html("");		
+
+//$(".inclusaovalores").html($(".inclusaovalores").html() + value
+//$(".inclusaovalores").html('');
+
+});
+
+	//aqui eu pensei, já que os dois botões fazem a
+	// mesma coisa, pq não ter uma função só
+	//aí pensei em pesquisar no google. Jquery 
+	//como selecionar 2 elementos. só achei besteira.
+	//aí coloquei jquery how to select two elements. 
+	//o primeiro resultado já resolveu meu problema
+	//https://api.jquery.com/multiple-selector/
+	
+	$('#cadastraformprincipal,#salvaformprincipal').on('click', function(e){
+		//executa as mesmas coisas ao selecionar ou
+		//o botão salvar ou o botão enviar
+	
+		//alert($(this).closest("form").html());					
+
+		//pega o botão clicado
+		var btn = jQuery(this);		
+			
+			//qual for o botão
+			//põe o valor do atributo data-salvacadastra
+			//do botão clicado como o valor do input
+			//hidden de id=verificabotao
+			$('#verificabotao').val(btn.data("salvacadastra"));
+		//}
+		//alert($('#verificabotao').val());
+	
+		
+	var caracteresDigitados;
+
+	//$(this).closest("element") procura o primeiro
+	//element ancestral do elemento atual, no caso o 
+	//formulario ancestral de $(this)  
+	var el_form = $(this).closest("form");
+	//Encontra o elemento no form com a classe  output para mostrar a mensagem
+	var el_form_output = $(el_form.find(".output"));
+	el_form_output.html("");//Limpa qualquer mensagem anterior do elemento que mostra a mensagem
+	var messagess = [];
+		
+		caracteresDigitados = parseInt($("#NO_Titulo").val().length);
+		//alert(caracteresDigitados);
+		//muda para 5 aqui para testar
+		if(caracteresDigitados>100){
+		
+			messagess.push("Somente 100 caracteres são permitidos no campo nome do projeto.");
+		}
+		
+		caracteresDigitados = parseInt($("#TX_Resumo_Ideia").val().length);
+		//alert(caracteresDigitados);
+		
+		if(caracteresDigitados>400){
+		
+			messagess.push("Somente 400 caracteres são permitidos no campo resumo.");
+		}
+		
+		/*
+		esta verificação não funciona para o campo detalhes
+		pois definimos que este campo contará palavras
+		caracteresDigitados = parseInt($("#DS_Ideia").val().length);
+		//alert(caracteresDigitados);
+		if(caracteresDigitados>2200){
+		
+			messagess.push("Somente 2200 caracteres são permitidos no campo 'detalhar projeto'.");
+		}
+
+		*/
+		//alert(messagess.length);
+		//abaixo ver se tem mensagens aqui e nem mostra as outras mensagens que apareceriam pelo arquivo bootstrap.min.js
+		if (messagess.length > 0) {
+				var output_html = "";
+
+				$.each(messagess, function(index, value){
+					output_html += "<li>" + value + "</li>";
+				});
+
+				el_form_output.html("<ul>" + output_html + "</ul>");
+
+				el_form_output.show(0);
+				el_form_output.removeClass("hidden");
+				//a função animate está no arquivo externo. no caso eu coloquei no boostatrap.min.js
+				animate(el_form_output, "bounceIn");
+				
+			} 					  		  
+		  else {
+				//$(el_form).find(':submit').data('disabled', 'disabled');
+                //acima é o código que ficaria ao usar o botão input type=submit
+              //mas como estamos usando button o código está abaixo
+				$(this).data('disabled', 'disabled');				
+				//código de validação que é comum
+                //a vários forms do site e 
+                validateClick($(el_form));
+				
+                // Aqui pode haver um código ajax que 
+                //chama a página que inclui os dados na base
+                //depois vem a mensagem de sucesso (ou não)
+                //pelo notify. neste caso o form não seria submetido
+                // e nem usaria o  validateClick($(el_form))
+                /*
+                abaixo é para testar o notify
+                //Mas no modelo de código usado não funciona
+                //pois submetemos o form no validateclick
+                //ou em caso de não validação dou return false
+                if(el_form_output.hasClass("hidden")){
+	                if (btn.data("salvacadastra")=='0'){
+						notify("Os dados foram salvos com sucesso !!!")
+					}
+					if (btn.data("salvacadastra")=='1'){
+						notify("Os dados foram cadastrados com sucesso !!!")
+					}
+				}
+				*/
+
+			}//fim else (para messagess.length <= 0).
+  });
+
+ 
+		
+
+	$('#NO_Titulo').simplyCountable({
+		  //strictMax impede que se tenha mais caracteres
+		  //ou palavras que o definido em maxcount
+		  strictMax: true,
+		  maxCount:           100,
+		  //counter => indica o id do elemento
+		  //em que aparece o total disponível 
+		  //para digitar no campo.
+		  counter: '#counter1',
+		  //countDirection:'up' a contagem será crescente até
+		  //atingir o valor de maxcount
+		  countDirection:'up',
+		 
+	 });
+	 
+	 $('#TX_Resumo_Ideia').simplyCountable({
+		  strictMax: true,
+		  maxCount:           400,
+		  counter: '#counter2',
+		 
+	 });
+	 
+	 $('#DS_Ideia').simplyCountable({
+		  strictMax: true,
+		  countType: 'words',
+		  //maxCount:           2200, //aqui era para caracteres
+		  maxCount:           220,
+		  counter: '#counter3',
+		 
+	 });
+	 
+
+	
+		
+});
+
+</script>            
+
+</body>
+
+
+</html>
+
+
+
+
+
+
